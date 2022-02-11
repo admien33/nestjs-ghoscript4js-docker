@@ -1,0 +1,67 @@
+{
+  "name": "nestjs-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "author": "kyhsa93",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/platform-express": "^8.0.0",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "ghostscript4js": "^3.2.1",
+    "path-parse": "^1.0.7",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.0.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^8.2.3",
+    "@nrwl/cli": "12.3.5",
+    "@nrwl/eslint-plugin-nx": "12.3.5",
+    "@nrwl/jest": "12.3.5",
+    "@nrwl/linter": "12.3.5",
+    "@nrwl/nest": "^12.3.5",
+    "@nrwl/node": "12.3.5",
+    "@nrwl/tao": "12.3.5",
+    "@nrwl/workspace": "12.3.5",
+    "@types/express": "^4.17.13",
+    "@types/jest": "26.0.8",
+    "@types/multer": "^1.4.7",
+    "@types/node": "14.14.33",
+    "@typescript-eslint/eslint-plugin": "4.19.0",
+    "@typescript-eslint/parser": "4.19.0",
+    "copyfiles": "^2.4.1",
+    "dotenv": "8.2.0",
+    "eslint": "7.22.0",
+    "eslint-config-prettier": "8.1.0",
+    "jest": "26.2.2",
+    "nodemon": "^1.19.2",
+    "prettier": "2.2.1",
+    "ts-jest": "26.5.5",
+    "ts-node": "~9.1.1",
+    "typescript": "~4.2.4"
+  },
+  "jest": {
+    "verbose": false,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    }
+  },
+  "scripts": {
+    "test": "jest",
+    "copy:templates": "copyfiles  src/templates/**/* dist",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && npm run copy:templates",
+    "start": "nodemon"
+  }
+}
